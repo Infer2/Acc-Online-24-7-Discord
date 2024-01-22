@@ -1,2 +1,2 @@
 # Discord Statuses
-Thiese scripts are my discord statuses
+These scripts are my discord statuses
