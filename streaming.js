@@ -1,3 +1,7 @@
+var http = require("http");
+http.createServer((function(e, t) {
+	t.write("I'm alive"), t.end()
+})).listen(8080);
 const {
 	Client: Client,
 	RichPresence: RichPresence
