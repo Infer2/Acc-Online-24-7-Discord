@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "discord.js-infer": "3.0.3",
-    "keypress": "^0.2.1",
-    "replace-in-file": "^7.1.0"
+    "discord.js-infer": "3.0.3"
   }
 }
