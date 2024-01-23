@@ -17,6 +17,6 @@ client.on("ready", (async () => {
 //	}), setInterval((() => {
 //		s = (s + 1) % n.length, t.setDetails(n[s]), client.user.setPresence({
 //			activities: [t]
-		})
-	}), 6225)
+//		})
+//	}), 6225)
 })), client.login(process.env.token);
