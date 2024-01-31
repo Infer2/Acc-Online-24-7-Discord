@@ -4,7 +4,7 @@ http.createServer((function (e, t) {
   }))
   .listen(8080);
 
-const { Client } = require("discord.js-infer");
+const { Client } = require("discord.js-selfbot-v13");
 const client = new Client({
   checkUpdate: false
 });
