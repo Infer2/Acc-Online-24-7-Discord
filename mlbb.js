@@ -1,18 +1,21 @@
-var http = require("http");
+const http = require("http");
+const {
+  Client: Client,
+  RichPresence: RichPresence
+} = require("discord.js-infer");
+
+const client = new Client;
+let stars = 341;
+
 http.createServer((function(e, t) {
     t.write("I'm alive"), t.end()
   }))
   .listen(8080);
-const {
-  Client: Client,
-  RichPresence: RichPresence
-} = require("discord.js-infer"), client = new Client;
-let stars = 340;
 
 client.on("ready", (async () => {
   console.log(`${client.user.username} is ready!`), t = () => {
     stars += Math.floor(5 * Math.random()) + 1;
-    
+
     const detailsText = `Stars: ${stars}`;
 
     const e = new RichPresence(client)
@@ -28,5 +31,8 @@ client.on("ready", (async () => {
     client.user.setPresence({
       activities: [e]
     })
-  }, t(), setInterval(t, Math.floor(48e4 * Math.random()) + 9e5)
+  };
+
+  t(); // Initial call
+  setInterval(t, (Math.random() < 0.25 ? Math.floor(12e4 * Math.random()) + 3e5 : Math.floor(22e4 * Math.random()) + 3e5));
 })), client.login(process.env.token);
