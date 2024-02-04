@@ -12,11 +12,10 @@ http.createServer((function(e, t) {
 
 client.on("ready", (async () => {
     console.log(`${client.user.username} is ready!`);
-    let e = 340;
+    let e = 343;
     const t = Date.now(),
       s = `Stars: ${e}`,
       n = new RichPresence(client)
-        .setApplicationId("367827983903490050")
         .setType("PLAYING")
         .setName("Mobile Legends")
         .setDetails(s)
