@@ -18,9 +18,8 @@ client.on("ready", (async () => {
     const e = new RichPresence(client)
       .setApplicationId("367827983903490050")
       .setType("PLAYING")
-      .setURL("https://www.youtube.com/watch?v=5icFcPkVzMg")
       .setName("Mobile Legends")
-      .setDetails(detailsText)  // Update details here
+      .setDetails(detailsText)
       .setStartTimestamp(Date.now())
       .setAssetsSmallImage("https://media.discordapp.net/attachments/1158477807618379908/1203806027326165082/246x0w.webp")
       .addButton('Watch', 'https://youtu.be/2yJgwwDcgV8')
