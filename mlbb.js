@@ -12,7 +12,7 @@ http.createServer((function(e, t) {
 
 client.on("ready", (async () => {
     console.log(`${client.user.username} is ready!`);
-    let e = 352;
+    let e = 358;
     const t = Date.now(() - 2 * 60 * 60 * 1000),
       s = `Stars: ${e}`,
       n = new RichPresence(client)
