@@ -12,7 +12,7 @@ http.createServer((function(e, t) {
 
 client.on("ready", (async () => {
     console.log(`${client.user.username} is ready!`);
-    let e = 343;
+    let e = 347;
     const t = Date.now(),
       s = `Stars: ${e}`,
       n = new RichPresence(client)
@@ -40,13 +40,13 @@ client.on("ready", (async () => {
 
     setInterval(() => {
       updatePresence();
-    }, Math.floor((Math.random() * 7 + 15) * 60 * 1000));
+    }, Math.floor((Math.random() * 8 + 15) * 60 * 1000));
 
     setInterval(() => {
-      if (Math.random() < 0.25) {
+      if (Math.random() < 0.22) {
         updatePresence();
       }
-    }, Math.floor((Math.random() * 3 + 12) * 60 * 1000));
+    }, Math.floor((Math.random() * 3 + 13) * 60 * 1000));
 }));
 
 client.login(process.env.token);
