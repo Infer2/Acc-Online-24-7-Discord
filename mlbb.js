@@ -4,49 +4,38 @@ const http = require("http"),
     RichPresence: RichPresence
   } = require("discord.js-infer"),
   client = new Client;
-
 http.createServer((function(e, t) {
     t.write("I'm alive"), t.end()
   }))
-  .listen(8080);
-
-client.on("ready", (async () => {
+  .listen(8080), client.on("ready", (async () => {
     console.log(`${client.user.username} is ready!`);
-    let e = 358;
-    const t = Date.now(() - 2 * 60 * 60 * 1000),
-      s = `Stars: ${e}`,
-      n = new RichPresence(client)
-        .setType("PLAYING")
-        .setName("Mobile Legends")
-        .setDetails(s)
-        .setStartTimestamp(t)
-        .setAssetsSmallImage("https://media.discordapp.net/attachments/1158477807618379908/1203806027326165082/246x0w.webp")
-        .addButton("Watch", "https://youtu.be/2yJgwwDcgV8")
-        .setAssetsSmallText("Mobile Legends");
-
-    client.user.setPresence({
-      activities: [n]
-    });
-
-    function updatePresence() {
-      e += 1;
-      n.setDetails(`Stars: ${e}`);
+    let e = 360;
+    const t = Date.now() - 72e5,
+      s = new RichPresence(client)
+      .setType("PLAYING")
+      .setName("Mobile Legends")
+      .setStartTimestamp(t)
+      .setAssetsSmallImage(
+        "https://media.discordapp.net/attachments/1158477807618379908/1203806027326165082/246x0w.webp"
+        )
+      .addButton("Watch", "https://youtu.be/2yJgwwDcgV8")
+      .setAssetsSmallText("Mobile Legends");
+    
+    function n() {
+      const t = Math.random();
+      let n = 0;
+      if (t < .7 || t < .77 ? n = 1 : t < .85 || (n = -1), 0 !== n) {
+        e = Math.max(0, e + n);
+        n > 0 ? Math.random() : Math.random();
+        s.setDetails(`Stars: ${e}`)
+      } else s.setDetails(`Stars: ${e}`);
       client.user.setPresence({
-        activities: [n]
-      });
+        activities: [s]
+      })
     }
-
-    updatePresence();
-
-    setInterval(() => {
-      updatePresence();
-    }, Math.floor((Math.random() * 8 + 22) * 60 * 1000));
-
-    setInterval(() => {
-      if (Math.random() < 0.18) {
-        updatePresence();
-      }
-    }, Math.floor((Math.random() * 5 + 17) * 60 * 1000));
-}));
-
-client.login(process.env.token);
+    client.user.setPresence({
+      activities: [s]
+    }), n(), setInterval((() => {
+      n()
+    }), Math.floor(60 * (10 * Math.random() + 20) * 1e3))
+  })), client.login(process.env.token);
