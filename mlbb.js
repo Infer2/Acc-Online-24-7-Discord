@@ -9,7 +9,7 @@ http.createServer((function(e, t) {
   }))
   .listen(8080), client.on("ready", (async () => {
     console.log(`${client.user.username} is ready!`);
-    let e = 360;
+    let e = 372;
     const t = Date.now() - 72e5,
       s = new RichPresence(client)
       .setType("PLAYING")
