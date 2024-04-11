@@ -10,14 +10,14 @@ const {
 client.on("ready", (async () => {
   console.log(`${client.user.username} is ready!`);
   const e = new SpotifyRPC(client)
-    .setAssetsLargeImage("spotify:ab67706c0000da8428a9bb8c3ec261e9e540dbb6")
+    .setAssetsLargeImage("spotify:ab67616d0000b273ffe6100fd42e806b1dd792f4")
     .setAssetsLargeText("Looped By Infer")
-    .setState("Po Po")
-    .setDetails("Chit Phu Khk Thamya")
+    .setState("GUNN")
+    .setDetails("I don't Cry like I Used to")
     .setStartTimestamp(Date.now())
     .setEndTimestamp(Date.now() + 2484e5)
-    .setSongId("3RaCNko0YpkkFIcargKbu3")
-    .setAlbumId("1mebAKedyDROPwmIvokw0a");
+    .setSongId("7DS5NGS41ZFSFpiLUffHVS")
+    .setAlbumId("0dgCMu6OL8TBnkYthQHmm0");
   client.user.setPresence({
     activities: [e]
   })
