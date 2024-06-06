@@ -3,10 +3,10 @@ const { Client } = require('discord.js-infer');
 const client = new Client();
 
 client.on('ready', async () => {
-  client.user.setSamsungActivity('com.ninjakiwi.bloonstd6', 'START');
+  client.user.setSamsungActivity('com.kurogame.wutheringwaves.global', 'START');
 
   setTimeout(() => {
-    client.user.setSamsungActivity('com.ninjakiwi.bloonstd6', 'UPDATE');
+    client.user.setSamsungActivity('com.kurogame.wutheringwaves.global', 'UPDATE');
   }, 30_000);
 });
 
