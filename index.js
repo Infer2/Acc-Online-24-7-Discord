@@ -1,12 +1,24 @@
-var http = require("http");
-http.createServer((function(e, t) {
-	t.write("I'm alive"), t.end()
-})).listen(8080);
-const {
-	Client: Client
-} = require("discord.js-infer"), client = new Client({
-	checkUpdate: !1
+const { Client } = require('discord.js-infer');
+const express = require('express');
+const app = express();
+const port = 8080;
+const client = new Client();
+
+app.get('/', (req, res) => {
+  res.send(`
+<!doctype html>
+<html>
+<head>
+<title>Made By Infer</title>
+</head>
+<body>
+<h1>uwu</h1>
+</body>
+</html>
+  `);
 });
-client.on("ready", (() => {
-	console.log(`Logged in as ${client.user.tag}`)
-})), client.login(process.env.token);
+
+app.listen(port, () => {});
+client.on('ready', async () => {
+  console.log(`${client.user.username} is ready!`);
+client.login(process.env.token);
