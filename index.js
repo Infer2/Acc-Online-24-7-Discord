@@ -1,4 +1,4 @@
-const { Client } = require('discord.js-infer');
+const { Client } = require('discord.js');
 const express = require('express');
 const app = express();
 const port = 8080;
@@ -18,7 +18,16 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.listen(port, () => {});
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
 client.on('ready', async () => {
-  console.log(`${client.user.username} is ready!`);
-client.login(process.env.token);
+  console.log(`${client.user.tag} is ready!`);
+  // Check if the token is defined before logging in
+  if (!process.env.TOKEN) {
+    console.error('Token is not defined.');
+    return;
+  }
+  client.login(process.env.TOKEN); // Assuming TOKEN is the correct env var name
+});
