@@ -23,11 +23,9 @@ app.listen(port, () => {
 });
 
 client.on('ready', async () => {
-  console.log(`${client.user.tag} is ready!`);
-  // Check if the token is defined before logging in
   if (!process.env.TOKEN) {
     console.error('Token is not defined.');
     return;
   }
-  client.login(process.env.TOKEN); // Assuming TOKEN is the correct env var name
+  client.login(process.env.TOKEN);
 });
