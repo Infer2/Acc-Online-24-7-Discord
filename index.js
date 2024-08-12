@@ -1,4 +1,4 @@
-const { Client } = require('discord.js');
+const { Client } = require('discord.js-infer');
 const express = require('express');
 const app = express();
 const port = 8080;
